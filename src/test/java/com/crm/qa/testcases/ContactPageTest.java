@@ -12,17 +12,18 @@ import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtil;
 
-public class ContactPageTest extends TestBase{
+public class ContactPageTest extends TestBase {
 
 	LoginPage loginPage;
 	HomePage homePage;
 	TestUtil testUtil;
 	ContactsPage contactsPage;
 	CalendarPage calendarPage;
-	
+
 	public ContactPageTest() {
 		super();
 	}
+
 	@BeforeMethod
 	public void setUp() {
 		initiization();
@@ -31,22 +32,27 @@ public class ContactPageTest extends TestBase{
 		contactsPage = new ContactsPage();
 		calendarPage = new CalendarPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		testUtil.switchToFrame();
+		contactsPage = homePage.clickOnContactsLink();
+
 	}
-	
-	@Test
+
+	@Test(priority = 1)
 	public void verifyContactsPageLabel() {
-		testUtil.switchToFrame();
-		homePage.clickOnContactsLink();
-		Assert.assertTrue(contactsPage.verifyContactsLebel(), "Contact Label is missing on the page");
+		Assert.assertTrue(contactsPage.verifyContactsLebel(), "contact label is missing on the page");
 	}
-	@Test
-	public void createNewContact() {
-		testUtil.switchToFrame();
-		homePage.clickOnNewContactsLink();
-		
+
+	@Test(priority = 2)
+	public void selectSingleContactsLink() {
+		contactsPage.selectContactsByName("Iryna Azimova");
 	}
-	
-	
+
+	@Test(priority = 3)
+	public void selectMultipleContactsLink() {
+		contactsPage.selectContactsByName("Iryna Azimova");
+		contactsPage.selectContactsByName("Micheal Jacson");
+	}
+
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();

@@ -14,6 +14,7 @@ public class HomePage extends TestBase {
 	
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
 	WebElement contactLink;
+	
 	@FindBy(xpath = "//*[@id=\"navmenu\"]/ul/li[4]/ul/li[1]/a")
 	WebElement newContactLink;
 	
