@@ -19,6 +19,7 @@ public class ContactPageTest extends TestBase {
 	TestUtil testUtil;
 	ContactsPage contactsPage;
 	CalendarPage calendarPage;
+	
 
 	public ContactPageTest() {
 		super();
@@ -51,6 +52,11 @@ public class ContactPageTest extends TestBase {
 	public void selectMultipleContactsLink() {
 		contactsPage.selectContactsByName("Iryna Azimova");
 		contactsPage.selectContactsByName("Micheal Jacson");
+	}
+	
+	@Test
+	public void validateCreateNewContact() {
+		
 	}
 
 	@AfterMethod
