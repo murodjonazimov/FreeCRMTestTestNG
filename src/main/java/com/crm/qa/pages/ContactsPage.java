@@ -43,9 +43,8 @@ public class ContactsPage extends TestBase {
 	}
 	
 	public void createNewContact(String title, String ftName, String ltName, String comp) {
-		Select select = new Select(driver.findElement(By.name("title")));
+		Select select = new Select(driver.findElement(By.xpath("//*[@name='title']")));
 		select.selectByVisibleText(title);
-		
 		firstName.sendKeys(ftName);
 		lastName.sendKeys(ltName);
 		company.sendKeys(comp);

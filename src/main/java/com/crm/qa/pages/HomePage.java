@@ -10,6 +10,7 @@ import com.crm.qa.base.TestBase;
 public class HomePage extends TestBase {
 	
 	@FindBy(xpath = "//td[contains(text(),'User: Murodjon Azimov')]")
+
 	WebElement userNameLabel;
 	
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
@@ -74,24 +75,25 @@ public class HomePage extends TestBase {
 		return new TasksLink();
 	}
 	
-	public CompaniesPage clickOnCompaniesLink() {
-		companiesLink.click();
-		return new CompaniesPage();
-	}
-	
-	public CalendarPage clickOnCalindarLink() {
-		calendarLink.click();
-		return new CalendarPage();
-	}
-	
-	public CasesPage clickOnCasesLink() {
-		casesLink.click();
-		return new CasesPage();
-	}
 	public void clickOnNewContactLink() {
 		Actions action = new Actions(driver);
 		action.moveToElement(contactLink).build().perform();
 		newContactLink.click();
 	}
+	
+//	public CompaniesPage clickOnCompaniesLink() {
+//		companiesLink.click();
+//		return new CompaniesPage();
+//	}
+//	
+//	public CalendarPage clickOnCalindarLink() {
+//		calendarLink.click();
+//		return new CalendarPage();
+//	}
+//	
+//	public CasesPage clickOnCasesLink() {
+//		casesLink.click();
+//		return new CasesPage();
+//	}
 	
 }

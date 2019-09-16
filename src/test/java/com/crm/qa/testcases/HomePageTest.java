@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
-import com.crm.qa.pages.CalendarPage;
+//import com.crm.qa.pages.CalendarPage;
 import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
@@ -17,7 +17,7 @@ public class HomePageTest extends TestBase{
 	HomePage homePage;
 	TestUtil testUtil;
 	ContactsPage contactsPage;
-	CalendarPage calendarPage;
+	//CalendarPage calendarPage;
 	
 	public HomePageTest() {
 		super();
@@ -29,7 +29,7 @@ public class HomePageTest extends TestBase{
 		testUtil = new TestUtil();
 		loginPage = new LoginPage();
 		contactsPage = new ContactsPage();
-		calendarPage = new CalendarPage();
+	//	calendarPage = new CalendarPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
@@ -49,11 +49,11 @@ public class HomePageTest extends TestBase{
 		testUtil.switchToFrame();
 		contactsPage = homePage.clickOnContactsLink();
 	}
-	@Test(priority=4)
-	public void verifyCalendarLinkTest() {
-		testUtil.switchToFrame();
-		calendarPage = homePage.clickOnCalindarLink();
-	}
+//	@Test(priority=4)
+//	public void verifyCalendarLinkTest() {
+//		testUtil.switchToFrame();
+//	//	calendarPage = homePage.clickOnCalindarLink();
+//	}
 	
 	
 	@AfterMethod
